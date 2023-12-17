@@ -9,11 +9,6 @@ import os
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-
-def aaa():
-  print("aaa")
-
-
 class TokenParser():
 
   def __init__(self):
@@ -241,6 +236,7 @@ class TokenParser():
     n = self.cdx(token_response['salt1'], token_response['salt2'],
                  token_response['salt3'], token_response['salt4'],
                  token_response['salt5'])
+
     l = self.rdx(token_response['salt1'], token_response['salt2'],
                  token_response['salt4'], token_response['salt3'],
                  token_response['salt5'])
@@ -248,6 +244,7 @@ class TokenParser():
     i = self.cdx(token_response['salt2'], token_response['salt1'],
                  token_response['salt3'], token_response['salt5'],
                  token_response['salt4'])
+
     r = self.rdx(token_response['salt2'], token_response['salt1'],
                  token_response['salt3'], token_response['salt4'],
                  token_response['salt5'])
